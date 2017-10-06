@@ -1,4 +1,4 @@
--- @BeyondTeam
+-- @kingdoomteam
  local clock = os.clock
 function sleep(time)  -- seconds
   local t0 = clock()
@@ -456,7 +456,7 @@ end
 
 function is_BDChannel_member(user_id, chat_id, msg_id)
 local var = true
-local getmember = getChatMember(BeyondTeam, user_id).result
+local getmember = getChatMember(Kingdoomteam, user_id).result
 local is_not_member = getmember.status == "left" or getmember.status == "kicked"
     if is_not_member and not is_admin1(user_id) then
     var = false
