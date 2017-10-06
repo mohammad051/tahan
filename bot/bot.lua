@@ -2,8 +2,8 @@ package.path = package.path..';.luarocks/share/lua/5.2/?.lua;.luarocks/share/lua
 package.cpath = package.cpath..';.luarocks/lib/lua/5.2/?.so'
 bot_token = "Token"
 send_api = "https://api.telegram.org/bot"..bot_token
-BeyondTeam = -1001011351482
-sudo_id = 157059515
+Kingdoomteam = -1001117461632
+sudo_id = 183081211
 http = require('socket.http')
 https = require('ssl.https')
 URL = require('socket.url')
@@ -16,7 +16,7 @@ JSON = (loadfile "./libs/dkjson.lua")()
 serpent = (loadfile "./libs/serpent.lua")()
 require('./bot/methods')
 require('./bot/utils')
--- @BeyondTeam
+-- @Kingdoomteam
 function bot_run()
 	bot = nil
 	while not bot do
@@ -130,13 +130,13 @@ local lang = redis:get(hash)
 keyboard = {}
   keyboard.inline_keyboard = {
    {
-{text= 'Beyond Team Channel' ,url = 'Telegram.Me/BeyondTeam'}
+{text= 'Beyond Team Channel' ,url = 'Telegram.Me/Kingdoomteam'}
 }					
 		}
 		if lang then
-		tkey = '_ابتدا در کانال تیم بیوند عضو شوید و دوباره تلاش کنید_'
+		tkey = '_ابتدا در کانال کینگ دوم عضو شوید و سپس مجدد امتحان نمایید_'
 		else
-		tkey = '_First Join To_ *Beyond Team Channel* _And Try Again_'
+		tkey = '_First Join To_ *King Team Channel* _And Try Again_'
 		end
       send_key(msg.chat.id, tkey, keyboard, msg.message_id, "md")
       return
@@ -188,7 +188,7 @@ function create_config( )
 	io.write('\n\27[1;33m>> Input your Telegram ID for set Sudo :\27[0;39;49m')
 	local SUDO = tonumber(io.read())
 if not tostring(SUDO):match('%d+') then
-    SUDO = 157059515
+    SUDO = 183081211
   end
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
@@ -200,29 +200,13 @@ if not tostring(SUDO):match('%d+') then
     "banhammer",
     "fun"
     },
-    sudo_users = {157059515, SUDO},--Sudo users
-    master_id = SUDO, 
+    sudo_users = {183081211,},--Sudo users
+    master_id = 183081211, 
     admins = {},
     disabled_channels = {},
     moderation = {data = './data/moderation.json'},
-    info_text = [[*》Beyond Manager V2.0*
-`》An advanced administration bot based on` *BDMessenger*
+    info_text = [[*Kingdoomteam Manager V2.0*
 
-》[Beyond Manager](https://github.com/BeyondTeam/BDManager)
-
-*》Admins :*
-*》Founder & Developer :* [SoLiD](Telegram.Me/SoLiD)
-_》Developer & Sponser :_ [MAKAN](Telegram.Me/MAKAN)
-_》Developer :_ [ToOfan](Telegram.Me/ToOfan)
-_》Developer :_ [TheNIS](Telegram.Me/bypa3r)
-
-*》Special thanks to :*
-`Beyond Team Members`
-
-*》Our channel :*
-》[BeyondTeam](Telegram.Me/BeyondTeam)
-
-*》Our Site :*
 [Beyond Team Forum](beyond-dev.ir)
 ]],
   }
